@@ -2,7 +2,7 @@ import 'dart:convert';
 import 'package:http/http.dart';
 import 'package:uas/models/artikel.dart';
 
-class ApiService {
+class ApiServis {
   final endPointUrl ="https://jaroji.web.id/api/news.php";
 
   Future<List<Artikel>> getArticle() async {

@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:uas/compenent/custom.dart';
 import 'package:uas/servis/api_servis.dart';
 import 'package:uas/models/artikel.dart';
+import 'package:uas/view/home_view.dart';
 
 void main() {
   runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -23,15 +23,15 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  ApiService client = ApiService();
+  ApiServis client = ApiServis();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Riska Ardila",
-            textAlign: TextAlign.center, style: TextStyle(color: Colors.black)),
-        backgroundColor: Colors.white,
+        centerTitle: true,
+        title: Text("Riska Ardila", style: TextStyle(color: Colors.white)),
+        backgroundColor: Colors.lightBlue,
       ),
       body: FutureBuilder(
         future: client.getArticle(),
